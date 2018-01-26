@@ -1,0 +1,33 @@
+---
+layout: compress
+---
+
+{% include base_path %}
+<!doctype html>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+  <head>
+    {% include analytics.html %}
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+  <body>
+    {% if site.analytics.google.tagmngr_container_id %}
+       {% include google-tag-manager-noscript.html %}
+    {% endif %}
+	{% include facebook-js-sdk-snippet.html %}
+    {% include browser-upgrade.html %}
+    {% include masthead.html %}
+
+    {{ content }}
+
+    <div class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>

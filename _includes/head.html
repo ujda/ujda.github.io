@@ -1,0 +1,27 @@
+{% include base_path %}
+
+<meta charset="utf-8">
+
+{% if site.analytics.google.tagmngr_container_id %}
+  {% include google-tag-manager.html %}
+{% endif %}
+
+{% if site.facebook.fb_page_id %}
+  <meta property="fb:pages" content="{{ site.facebook.fb_page_id }}" />
+{% endif %}
+
+{% include seo.html %}
+
+<link href="{{ base_path }}/feed.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
